@@ -5,6 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import Testimonials from "../components/Testimonials";
+import Text from "../components/Text";
 import Pricing from "../components/Pricing";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import FullWidthImage from "../components/FullWidthImage";
@@ -18,6 +19,7 @@ export const ProductPageTemplate = ({
   intro,
   main,
   testimonials,
+  texts,
   fullImage,
   pricing,
 }) => {
@@ -71,6 +73,7 @@ export const ProductPageTemplate = ({
                   </div>
                 </div>
                 <Testimonials testimonials={testimonials} />
+                <Text texts={texts} ></Text>
               </div>
             </div>
           </div>
@@ -112,6 +115,7 @@ ProductPageTemplate.propTypes = {
     image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   testimonials: PropTypes.array,
+  texts: PropTypes.array,
   fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   pricing: PropTypes.shape({
     heading: PropTypes.string,
@@ -133,6 +137,7 @@ const ProductPage = ({ data }) => {
         intro={frontmatter.intro}
         main={frontmatter.main}
         testimonials={frontmatter.testimonials}
+        texts={frontmatter.texts}
         fullImage={frontmatter.full_image}
         pricing={frontmatter.pricing}
       />
@@ -205,6 +210,11 @@ export const productPageQuery = graphql`
         testimonials {
           author
           quote
+        }
+        
+        texts {
+          title
+          body
         }
 
         full_image {
