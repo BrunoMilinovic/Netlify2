@@ -217,7 +217,7 @@ collections:
                   { label: Author, name: author, widget: string },
                 ],
             }
-                      - {
+          - {
               label: Texts,
               name: texts,
               widget: list,
