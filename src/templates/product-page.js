@@ -212,10 +212,6 @@ export const productPageQuery = graphql`
           quote
         }
         
-        texts {
-          title
-          body
-        }
 
         full_image {
           childImageSharp {
