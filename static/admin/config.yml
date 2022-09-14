@@ -217,6 +217,16 @@ collections:
                   { label: Author, name: author, widget: string },
                 ],
             }
+                      - {
+              label: Texts,
+              name: texts,
+              widget: list,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Body, name: body, widget: string },
+                ],
+            }
           - { label: Full_image, name: full_image, widget: image }
           - {
               label: Pricing,
